@@ -47,6 +47,8 @@ See the following for more information on AWS SDK configuration files:
 
 Pre-compiled binaries for various platforms can be downloaded [here](https://github.com/mmmorris1975/aws-runas/releases/latest)
 
+*Note:* If you are upgrading from an older version, it may be necessary to purge old cache files to avoid `[CRIT] ▶ Error getting credentials: AccessDenied: ...` errors.  The cache files are typically found in the `~/.aws/` directory and follow the format `.aws_assume_role_<role>` and `.aws_session_token_default`.  After removing the stale cache files, running `aws-runas` will trigger a new session and request MFA authentication again.
+
 ### Bash Completion
 
 To get profile tab completion in bash, install the `extras/aws-runas-bash-completion`
